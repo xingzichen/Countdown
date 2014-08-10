@@ -28,6 +28,12 @@
 		EC7FF21719960B6D00FD4566 /* XZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7FF21619960B6D00FD4566 /* XZBaseViewController.m */; };
 		EC7FF21B199665C600FD4566 /* XZCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7FF219199665C600FD4566 /* XZCountViewController.m */; };
 		EC7FF21C199665C600FD4566 /* XZCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7FF21A199665C600FD4566 /* XZCountViewController.xib */; };
+		ECC55D541997ABE300EA8F7D /* XZDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC55D521997ABE300EA8F7D /* XZDetailViewController.m */; };
+		ECC55D551997ABE300EA8F7D /* XZDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECC55D531997ABE300EA8F7D /* XZDetailViewController.xib */; };
+		ECC55D591997B89000EA8F7D /* XZScheuleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC55D571997B89000EA8F7D /* XZScheuleListViewController.m */; };
+		ECC55D5A1997B89000EA8F7D /* XZScheuleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECC55D581997B89000EA8F7D /* XZScheuleListViewController.xib */; };
+		ECC55D5E1997BA0D00EA8F7D /* XZScheuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC55D5C1997BA0D00EA8F7D /* XZScheuleTableViewCell.m */; };
+		ECC55D5F1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECC55D5D1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +77,15 @@
 		EC7FF218199665C600FD4566 /* XZCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZCountViewController.h; path = classes/ViewController/XZCountViewController.h; sourceTree = "<group>"; };
 		EC7FF219199665C600FD4566 /* XZCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZCountViewController.m; path = classes/ViewController/XZCountViewController.m; sourceTree = "<group>"; };
 		EC7FF21A199665C600FD4566 /* XZCountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZCountViewController.xib; path = classes/ViewController/XZCountViewController.xib; sourceTree = "<group>"; };
+		ECC55D511997ABE300EA8F7D /* XZDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZDetailViewController.h; path = classes/ViewController/XZDetailViewController.h; sourceTree = "<group>"; };
+		ECC55D521997ABE300EA8F7D /* XZDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZDetailViewController.m; path = classes/ViewController/XZDetailViewController.m; sourceTree = "<group>"; };
+		ECC55D531997ABE300EA8F7D /* XZDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZDetailViewController.xib; path = classes/ViewController/XZDetailViewController.xib; sourceTree = "<group>"; };
+		ECC55D561997B89000EA8F7D /* XZScheuleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZScheuleListViewController.h; path = classes/ViewController/XZScheuleListViewController.h; sourceTree = "<group>"; };
+		ECC55D571997B89000EA8F7D /* XZScheuleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZScheuleListViewController.m; path = classes/ViewController/XZScheuleListViewController.m; sourceTree = "<group>"; };
+		ECC55D581997B89000EA8F7D /* XZScheuleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZScheuleListViewController.xib; path = classes/ViewController/XZScheuleListViewController.xib; sourceTree = "<group>"; };
+		ECC55D5B1997BA0D00EA8F7D /* XZScheuleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZScheuleTableViewCell.h; path = classes/View/XZScheuleTableViewCell.h; sourceTree = "<group>"; };
+		ECC55D5C1997BA0D00EA8F7D /* XZScheuleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZScheuleTableViewCell.m; path = classes/View/XZScheuleTableViewCell.m; sourceTree = "<group>"; };
+		ECC55D5D1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZScheuleTableViewCell.xib; path = classes/View/XZScheuleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +199,9 @@
 				EC7FF2101995F8C600FD4566 /* XZSettingTableViewCell.h */,
 				EC7FF2111995F8C600FD4566 /* XZSettingTableViewCell.m */,
 				EC7FF2121995F8C600FD4566 /* XZSettingTableViewCell.xib */,
+				ECC55D5B1997BA0D00EA8F7D /* XZScheuleTableViewCell.h */,
+				ECC55D5C1997BA0D00EA8F7D /* XZScheuleTableViewCell.m */,
+				ECC55D5D1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -197,6 +215,12 @@
 				EC7FF218199665C600FD4566 /* XZCountViewController.h */,
 				EC7FF219199665C600FD4566 /* XZCountViewController.m */,
 				EC7FF21A199665C600FD4566 /* XZCountViewController.xib */,
+				ECC55D511997ABE300EA8F7D /* XZDetailViewController.h */,
+				ECC55D521997ABE300EA8F7D /* XZDetailViewController.m */,
+				ECC55D531997ABE300EA8F7D /* XZDetailViewController.xib */,
+				ECC55D561997B89000EA8F7D /* XZScheuleListViewController.h */,
+				ECC55D571997B89000EA8F7D /* XZScheuleListViewController.m */,
+				ECC55D581997B89000EA8F7D /* XZScheuleListViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -292,8 +316,11 @@
 				EC7FF2141995F8C600FD4566 /* XZSettingTableViewCell.xib in Resources */,
 				EC7FF20F1995CAC800FD4566 /* XZSettingListTableViewController.xib in Resources */,
 				EC7FF1DE1995B2F200FD4566 /* InfoPlist.strings in Resources */,
+				ECC55D5F1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib in Resources */,
+				ECC55D551997ABE300EA8F7D /* XZDetailViewController.xib in Resources */,
 				EC7FF1E61995B2F200FD4566 /* Images.xcassets in Resources */,
 				EC7FF21C199665C600FD4566 /* XZCountViewController.xib in Resources */,
+				ECC55D5A1997B89000EA8F7D /* XZScheuleListViewController.xib in Resources */,
 				EC7FF2091995B5AE00FD4566 /* XZMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC55D591997B89000EA8F7D /* XZScheuleListViewController.m in Sources */,
 				EC7FF20E1995CAC800FD4566 /* XZSettingListTableViewController.m in Sources */,
 				EC7FF21B199665C600FD4566 /* XZCountViewController.m in Sources */,
 				EC7FF1E41995B2F200FD4566 /* XZAppDelegate.m in Sources */,
@@ -320,6 +348,8 @@
 				EC7FF2131995F8C600FD4566 /* XZSettingTableViewCell.m in Sources */,
 				EC7FF1E01995B2F200FD4566 /* main.m in Sources */,
 				EC7FF21719960B6D00FD4566 /* XZBaseViewController.m in Sources */,
+				ECC55D541997ABE300EA8F7D /* XZDetailViewController.m in Sources */,
+				ECC55D5E1997BA0D00EA8F7D /* XZScheuleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +546,7 @@
 				EC7FF1FE1995B2F200FD4566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC7FF1FF1995B2F200FD4566 /* Build configuration list for PBXNativeTarget "CountdownTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +555,7 @@
 				EC7FF2011995B2F200FD4566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

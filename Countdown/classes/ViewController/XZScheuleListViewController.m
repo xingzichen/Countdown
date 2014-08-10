@@ -1,20 +1,20 @@
 //
-//  XZSettingListTableViewController.m
+//  XZScheuleListViewController.m
 //  Countdown
 //
-//  Created by Liang on 8/9/14.
+//  Created by Liang on 8/10/14.
 //  Copyright (c) 2014 Xing Michael. All rights reserved.
 //
 
-#import "XZSettingListTableViewController.h"
-#import "XZSettingTableViewCell.h"
 #import "XZScheuleListViewController.h"
+#import "XZDetailViewController.h"
+#import "XZScheuleTableViewCell.h"
 
-@interface XZSettingListTableViewController ()
+@interface XZScheuleListViewController ()
 
 @end
 
-@implementation XZSettingListTableViewController
+@implementation XZScheuleListViewController
 
 - (void)viewDidLoad
 {
@@ -28,7 +28,8 @@
     
     self.title = @"时间设置";
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"XZSettingTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kSettingTableViewCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"XZScheuleTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kScheuleTableViewCell];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,18 +51,19 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewCell forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kScheuleTableViewCell forIndexPath:indexPath];
     
     // Configure the cell...
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -101,6 +103,7 @@
 }
 */
 
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -108,14 +111,12 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    XZScheuleListViewController *scheuleViewController = [[XZScheuleListViewController alloc] initWithNibName:@"XZScheuleListViewController" bundle:nil];
+    XZDetailViewController *detailViewController = [[XZDetailViewController alloc] initWithNibName:@"XZDetailViewController" bundle:nil];
     
     // Pass the selected object to the new view controller.
-    scheuleViewController.title = @"修改事件";
-    scheuleViewController.parentNavigationController = self.parentNavigationController;
     
     // Push the view controller.
-    [self.parentNavigationController pushViewController:scheuleViewController animated:YES];
+    [self.parentNavigationController pushViewController:detailViewController animated:YES];
 }
 
 
