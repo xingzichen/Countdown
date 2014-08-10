@@ -7,6 +7,7 @@
 //
 
 #import "XZAppDelegate.h"
+#import "XZMainViewController.h"
 
 @implementation XZAppDelegate
 
@@ -14,6 +15,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    XZMainViewController *mainView = [[XZMainViewController alloc] initWithNibName:@"XZMainViewController" bundle:nil];
+    
+    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:mainView];
+    
+    self.window.rootViewController = navCtrl;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
