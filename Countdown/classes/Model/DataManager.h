@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AlarmData.h"
 
 @class DataManager;
 
@@ -19,7 +18,7 @@
 
 @interface DataManager : NSObject
 
-@property (nonatomic, strong) AlarmData *alarmManager;
+@property (nonatomic, strong) NSMutableDictionary *groups;
 
 + (DataManager *) sharedInstance;
 - (void) saveData;

@@ -10,19 +10,14 @@
 
 @implementation XZAlarmEvent
 
-//@synthesize edit;
-//@synthesize desc;
-//@synthesize name;
-//@synthesize alarmId;
-//@synthesize power;
-
-- (instancetype)init
+- (instancetype)init:(NSString*)name
 {
     self = [super init];
     if (self) {
         [self setEdit:[[NSDate date] timeIntervalSince1970]*1000];
         NSUUID *uid = [[NSUUID alloc] init];
         [self setUuid:[uid UUIDString]];
+        [self setName:name];
     }
     return self;
 }

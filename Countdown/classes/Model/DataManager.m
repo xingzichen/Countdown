@@ -25,22 +25,32 @@ static DataManager *_sharedInstance = nil;
 {
     self = [super init];
     if (self) {
-        if (!_alarmManager) {
-            _alarmManager = [[AlarmData alloc] init];
-        }
+        [self loadData];
     }
     return self;
 }
 
-- (AlarmData *)alarmManager{
-    if (!_alarmManager) {
-        _alarmManager = [[AlarmData alloc] init];
-    }
-    return _alarmManager;
+- (void) saveGroupData {
+    NSUserDefaults *usrdefaults = [NSUserDefaults standardUserDefaults];
+    
+    [usrdefaults setObject:_groups forKey:@"groups"];
 }
 
-- (void) saveData{
-    [[self alarmManager] saveData];
+- (void) loadGroupsData {
+    NSUserDefaults *usrdefaults = [NSUserDefaults standardUserDefaults];
+    _groups = [usrdefaults dictionaryForKey:@"groups"];
+    if (_groups==nil) {
+        _groups = [[NSDictionary alloc] init];
+    }
+}
+
+
+- (void) saveData {
+    [self saveGroupData];
+}
+
+- (void) loadData {
+    [self loadGroupsData];
 }
 
 @end

@@ -24,7 +24,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.title = @"时间设置";
+    self.title = @"时间方案";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"XZSettingTableViewCell" bundle:nil] forCellReuseIdentifier:kSettingTableViewCell];
     

@@ -14,7 +14,7 @@
 		<string>https://github.com/xingzichen/Countdown.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Countdown.xcodeproj/project.xcworkspace</string>
+	<string>Countdown.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A7B51D0C5D030CF2CE7E05CF57FF1BFB22778CC4</key>

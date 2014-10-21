@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EC28405919F6210E00003480 /* XZSettingGroupTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC28405719F6210E00003480 /* XZSettingGroupTableController.m */; };
 		EC28405A19F6210E00003480 /* XZSettingGroupTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC28405819F6210E00003480 /* XZSettingGroupTableController.xib */; };
+		EC28405C19F6690900003480 /* XZAlarmGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = EC28405B19F6690900003480 /* XZAlarmGroup.m */; };
 		EC7FF1D41995B2F200FD4566 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D31995B2F200FD4566 /* Foundation.framework */; };
 		EC7FF1D61995B2F200FD4566 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D51995B2F200FD4566 /* CoreGraphics.framework */; };
 		EC7FF1D81995B2F200FD4566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D71995B2F200FD4566 /* UIKit.framework */; };
@@ -36,7 +37,6 @@
 		ECC55D5E1997BA0D00EA8F7D /* XZScheuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC55D5C1997BA0D00EA8F7D /* XZScheuleTableViewCell.m */; };
 		ECC55D5F1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECC55D5D1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib */; };
 		ECC55D63199F9E6700EA8F7D /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC55D62199F9E6700EA8F7D /* DataManager.m */; };
-		ECC55D6619A10B5F00EA8F7D /* AlarmData.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC55D6519A10B5F00EA8F7D /* AlarmData.m */; };
 		ECC55D6919A39EDE00EA8F7D /* XZAlarmEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC55D6819A39EDE00EA8F7D /* XZAlarmEvent.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +55,8 @@
 		EC28405619F6210E00003480 /* XZSettingGroupTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZSettingGroupTableController.h; path = classes/ViewController/XZSettingGroupTableController.h; sourceTree = "<group>"; };
 		EC28405719F6210E00003480 /* XZSettingGroupTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZSettingGroupTableController.m; path = classes/ViewController/XZSettingGroupTableController.m; sourceTree = "<group>"; };
 		EC28405819F6210E00003480 /* XZSettingGroupTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZSettingGroupTableController.xib; path = classes/ViewController/XZSettingGroupTableController.xib; sourceTree = "<group>"; };
+		EC28405B19F6690900003480 /* XZAlarmGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZAlarmGroup.m; path = classes/Model/XZAlarmGroup.m; sourceTree = "<group>"; };
+		EC28405D19F6696100003480 /* XZAlarmGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XZAlarmGroup.h; path = classes/Model/XZAlarmGroup.h; sourceTree = "<group>"; };
 		EC7FF1D01995B2F200FD4566 /* Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7FF1D31995B2F200FD4566 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC7FF1D51995B2F200FD4566 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,8 +96,6 @@
 		ECC55D5D1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZScheuleTableViewCell.xib; path = classes/View/XZScheuleTableViewCell.xib; sourceTree = "<group>"; };
 		ECC55D61199F9E6700EA8F7D /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = classes/Model/DataManager.h; sourceTree = "<group>"; };
 		ECC55D62199F9E6700EA8F7D /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = classes/Model/DataManager.m; sourceTree = "<group>"; };
-		ECC55D6419A10B5F00EA8F7D /* AlarmData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmData.h; path = classes/Model/AlarmData.h; sourceTree = "<group>"; };
-		ECC55D6519A10B5F00EA8F7D /* AlarmData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmData.m; path = classes/Model/AlarmData.m; sourceTree = "<group>"; };
 		ECC55D6719A39EDE00EA8F7D /* XZAlarmEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZAlarmEvent.h; path = classes/Model/XZAlarmEvent.h; sourceTree = "<group>"; };
 		ECC55D6819A39EDE00EA8F7D /* XZAlarmEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZAlarmEvent.m; path = classes/Model/XZAlarmEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,10 +257,10 @@
 			children = (
 				ECC55D61199F9E6700EA8F7D /* DataManager.h */,
 				ECC55D62199F9E6700EA8F7D /* DataManager.m */,
-				ECC55D6419A10B5F00EA8F7D /* AlarmData.h */,
-				ECC55D6519A10B5F00EA8F7D /* AlarmData.m */,
 				ECC55D6719A39EDE00EA8F7D /* XZAlarmEvent.h */,
 				ECC55D6819A39EDE00EA8F7D /* XZAlarmEvent.m */,
+				EC28405D19F6696100003480 /* XZAlarmGroup.h */,
+				EC28405B19F6690900003480 /* XZAlarmGroup.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -376,11 +376,11 @@
 				EC7FF1E41995B2F200FD4566 /* XZAppDelegate.m in Sources */,
 				ECC55D6919A39EDE00EA8F7D /* XZAlarmEvent.m in Sources */,
 				EC7FF2081995B5AE00FD4566 /* XZMainViewController.m in Sources */,
-				ECC55D6619A10B5F00EA8F7D /* AlarmData.m in Sources */,
 				EC7FF2131995F8C600FD4566 /* XZSettingTableViewCell.m in Sources */,
 				EC7FF1E01995B2F200FD4566 /* main.m in Sources */,
 				ECC55D541997ABE300EA8F7D /* XZDetailViewController.m in Sources */,
 				ECC55D63199F9E6700EA8F7D /* DataManager.m in Sources */,
+				EC28405C19F6690900003480 /* XZAlarmGroup.m in Sources */,
 				ECC55D5E1997BA0D00EA8F7D /* XZScheuleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
