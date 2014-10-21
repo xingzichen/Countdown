@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XZSettingListTableViewController : UITableViewController
-
-@property (nonatomic) UINavigationController *parentNavigationController;
+@interface XZSettingListTableViewController : UINavigationController
 
 @end

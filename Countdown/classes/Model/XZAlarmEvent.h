@@ -11,9 +11,10 @@
 @interface XZAlarmEvent : NSObject
 
 @property (nonatomic) NSTimeInterval edit;
-@property (nonatomic) NSTimeInterval clock;
+//@property (nonatomic) NSTimeInterval clock;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *desc;
+@property (nonatomic) NSString *uuid;
 @property (nonatomic) BOOL *power;
 
 @end

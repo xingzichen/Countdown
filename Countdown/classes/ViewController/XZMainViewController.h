@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (weak, nonatomic) IBOutlet UITabBarItem *countItem;
 @property (weak, nonatomic) IBOutlet UITabBarItem *settingItem;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end

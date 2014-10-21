@@ -7,14 +7,12 @@
 //
 
 #import "XZMainViewController.h"
-#import "XZBaseViewController.h"
 
 @interface XZMainViewController () <UITabBarDelegate>
 
 @end
 
 @implementation XZMainViewController {
-    UIView *containerView;
     UITabBarItem *currentItem;
     NSMutableDictionary *viewCache;
 }
@@ -34,15 +32,6 @@
     // Do any additional setup after loading the view from its nib.
     viewCache = [[NSMutableDictionary alloc] init];
     
-    CGRect containerFrame = CGRectMake(0, 0, self.view.frame.size.width, 0);
-    if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7) {
-        containerFrame.origin.y = 64;
-    }
-    containerFrame.size.height = self.view.frame.size.height - containerFrame.origin.y - self.tabBar.frame.size.height;
-    
-    containerView = [[UIView alloc] initWithFrame:containerFrame];
-    containerView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:containerView];
     
     self.tabBar.delegate = self;
     [self.tabBar setSelectedItem:self.settingItem];
@@ -57,6 +46,7 @@
 }
 
 - (void)loadContent:(UITabBarItem *)item {
+    
     NSString *contentClassName = nil;
     if (item == self.countItem) {
         contentClassName = @"XZCountViewController";
@@ -65,13 +55,14 @@
         contentClassName = @"XZSettingListTableViewController";
     }
     
+    self.title = item.title;
     
     [self addSubViewControllerByName:contentClassName];
-    self.title = item.title;
+    
 }
 
 - (void)addSubViewControllerByName:(NSString *)className {
-    XZBaseViewController *vc = [viewCache objectForKey:className];
+    UIViewController *vc = [viewCache objectForKey:className];
     if (!vc) {
         Class vcClass = NSClassFromString(className);
         vc = [[vcClass alloc] initWithNibName:className bundle:nil];
@@ -80,10 +71,9 @@
         }
     }
     
-    vc.view.frame = containerView.bounds;
+    vc.view.frame = _containerView.bounds;
     
-    vc.parentNavigationController = self.navigationController;
-    [containerView addSubview:vc.view];
+    [_containerView addSubview:vc.view];
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{

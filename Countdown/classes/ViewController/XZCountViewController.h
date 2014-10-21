@@ -10,6 +10,4 @@
 
 @interface XZCountViewController : UIViewController
 
-@property (nonatomic) UINavigationController *parentNavigationController;
-
 @end

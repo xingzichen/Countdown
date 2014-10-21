@@ -10,6 +10,4 @@
 
 @interface XZScheuleListViewController : UITableViewController
 
-@property (nonatomic) UINavigationController *parentNavigationController;
-
 @end
