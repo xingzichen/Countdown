@@ -10,6 +10,8 @@
 		EC28405919F6210E00003480 /* XZSettingGroupTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC28405719F6210E00003480 /* XZSettingGroupTableController.m */; };
 		EC28405A19F6210E00003480 /* XZSettingGroupTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC28405819F6210E00003480 /* XZSettingGroupTableController.xib */; };
 		EC28405C19F6690900003480 /* XZAlarmGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = EC28405B19F6690900003480 /* XZAlarmGroup.m */; };
+		EC5055D019F7A76000876585 /* XZAddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5055CE19F7A76000876585 /* XZAddGroupViewController.m */; };
+		EC5055D119F7A76000876585 /* XZAddGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5055CF19F7A76000876585 /* XZAddGroupViewController.xib */; };
 		EC7FF1D41995B2F200FD4566 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D31995B2F200FD4566 /* Foundation.framework */; };
 		EC7FF1D61995B2F200FD4566 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D51995B2F200FD4566 /* CoreGraphics.framework */; };
 		EC7FF1D81995B2F200FD4566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D71995B2F200FD4566 /* UIKit.framework */; };
@@ -57,6 +59,9 @@
 		EC28405819F6210E00003480 /* XZSettingGroupTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZSettingGroupTableController.xib; path = classes/ViewController/XZSettingGroupTableController.xib; sourceTree = "<group>"; };
 		EC28405B19F6690900003480 /* XZAlarmGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZAlarmGroup.m; path = classes/Model/XZAlarmGroup.m; sourceTree = "<group>"; };
 		EC28405D19F6696100003480 /* XZAlarmGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XZAlarmGroup.h; path = classes/Model/XZAlarmGroup.h; sourceTree = "<group>"; };
+		EC5055CD19F7A76000876585 /* XZAddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZAddGroupViewController.h; path = classes/ViewController/XZAddGroupViewController.h; sourceTree = "<group>"; };
+		EC5055CE19F7A76000876585 /* XZAddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZAddGroupViewController.m; path = classes/ViewController/XZAddGroupViewController.m; sourceTree = "<group>"; };
+		EC5055CF19F7A76000876585 /* XZAddGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZAddGroupViewController.xib; path = classes/ViewController/XZAddGroupViewController.xib; sourceTree = "<group>"; };
 		EC7FF1D01995B2F200FD4566 /* Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7FF1D31995B2F200FD4566 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC7FF1D51995B2F200FD4566 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -238,6 +243,9 @@
 				EC28405619F6210E00003480 /* XZSettingGroupTableController.h */,
 				EC28405719F6210E00003480 /* XZSettingGroupTableController.m */,
 				EC28405819F6210E00003480 /* XZSettingGroupTableController.xib */,
+				EC5055CD19F7A76000876585 /* XZAddGroupViewController.h */,
+				EC5055CE19F7A76000876585 /* XZAddGroupViewController.m */,
+				EC5055CF19F7A76000876585 /* XZAddGroupViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -351,6 +359,7 @@
 				ECC55D5A1997B89000EA8F7D /* XZScheuleListViewController.xib in Resources */,
 				EC7FF2091995B5AE00FD4566 /* XZMainViewController.xib in Resources */,
 				EC28405A19F6210E00003480 /* XZSettingGroupTableController.xib in Resources */,
+				EC5055D119F7A76000876585 /* XZAddGroupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +384,7 @@
 				EC7FF21B199665C600FD4566 /* XZCountViewController.m in Sources */,
 				EC7FF1E41995B2F200FD4566 /* XZAppDelegate.m in Sources */,
 				ECC55D6919A39EDE00EA8F7D /* XZAlarmEvent.m in Sources */,
+				EC5055D019F7A76000876585 /* XZAddGroupViewController.m in Sources */,
 				EC7FF2081995B5AE00FD4566 /* XZMainViewController.m in Sources */,
 				EC7FF2131995F8C600FD4566 /* XZSettingTableViewCell.m in Sources */,
 				EC7FF1E01995B2F200FD4566 /* main.m in Sources */,

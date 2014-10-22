@@ -15,4 +15,6 @@
 @property (nonatomic)NSMutableDictionary *alarms;
 @property (nonatomic)BOOL power;
 
+- (instancetype) init:(NSString *)name;
+
 @end

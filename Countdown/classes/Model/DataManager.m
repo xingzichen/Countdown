@@ -33,14 +33,15 @@ static DataManager *_sharedInstance = nil;
 - (void) saveGroupData {
     NSUserDefaults *usrdefaults = [NSUserDefaults standardUserDefaults];
     
-    [usrdefaults setObject:_groups forKey:@"groups"];
+    [usrdefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:_groups] forKey:@"groups"];
 }
 
 - (void) loadGroupsData {
     NSUserDefaults *usrdefaults = [NSUserDefaults standardUserDefaults];
-    _groups = [usrdefaults dictionaryForKey:@"groups"];
+    NSData *dat = [usrdefaults valueForKey:@"groups"];
+    _groups = [[NSKeyedUnarchiver unarchiveObjectWithData:dat] mutableCopy];
     if (_groups==nil) {
-        _groups = [[NSDictionary alloc] init];
+        _groups = [[NSMutableDictionary alloc] init];
     }
 }
 

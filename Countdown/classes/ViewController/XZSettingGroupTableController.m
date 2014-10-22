@@ -9,6 +9,8 @@
 #import "XZSettingGroupTableController.h"
 #import "XZSettingTableViewCell.h"
 #import "XZScheuleListViewController.h"
+#import "XZAddGroupViewController.h"
+#import "DataManager.h"
 
 @interface XZSettingGroupTableController ()
 
@@ -38,6 +40,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [[self tableView] reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -49,7 +57,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    NSInteger numberOfRow = [[[DataManager sharedInstance] groups] count];
+    return numberOfRow;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -120,7 +129,9 @@
 {
     // add a new scheule group
     NSLog(@"addNewScheuleGroup");
-    
+    XZAddGroupViewController *addGroupController = [[XZAddGroupViewController alloc] initWithNibName:@"XZAddGroupViewController" bundle:nil];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:addGroupController];
+    [self.navigationController presentViewController:navi animated:YES completion:nil];
 }
 
 - (IBAction)editScheuleGroup:(id)sender

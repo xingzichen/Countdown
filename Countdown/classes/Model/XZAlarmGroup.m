@@ -22,6 +22,7 @@
     return self;
 }
 
+
 - (void) addAlarm:(XZAlarmEvent *)alarm
 {
     [self.alarms setObject:alarm forKey:alarm.uuid];
