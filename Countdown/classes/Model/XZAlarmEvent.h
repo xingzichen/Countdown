@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XZAlarmEvent : NSObject
+@interface XZAlarmEvent : NSObject<NSCoding>
 
-@property (nonatomic) NSTimeInterval edit;
-@property (nonatomic) NSTimeInterval clock;
+@property (nonatomic) NSDate *edit;
+@property (nonatomic) NSDate *clock;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *desc;
-@property (nonatomic) NSString *group;
 @property (nonatomic) NSString *uuid;
 
 @end

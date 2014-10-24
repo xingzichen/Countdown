@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "XZAlarmGroup.h"
 @interface XZScheuleListViewController : UITableViewController
+
+@property (nonatomic,weak) XZAlarmGroup *group;
 
 @end

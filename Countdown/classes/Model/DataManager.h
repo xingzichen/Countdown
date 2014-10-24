@@ -22,5 +22,6 @@
 
 + (DataManager *) sharedInstance;
 - (void) saveData;
+- (void) loadData;
 
 @end

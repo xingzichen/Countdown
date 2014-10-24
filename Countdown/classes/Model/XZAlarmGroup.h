@@ -7,7 +7,9 @@
 //
 #import <Foundation/Foundation.h>
 
-@interface XZAlarmGroup : NSObject
+extern NSString *const kAlarmFileName;
+
+@interface XZAlarmGroup : NSObject<NSCoding>
 
 @property (nonatomic)NSString *uid;
 @property (nonatomic)NSString *name;

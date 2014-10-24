@@ -7,10 +7,19 @@
 //
 
 #import "DataManager.h"
+#import "XZAlarmGroup.h"
 
 static DataManager *_sharedInstance = nil;
 
-@implementation DataManager
+@interface DataManager()
+
+@property (nonatomic,strong) NSString *dictionaryPath;
+
+@end
+
+@implementation DataManager {
+    
+}
 
 + (DataManager *)sharedInstance{
     @synchronized (self){
@@ -25,33 +34,46 @@ static DataManager *_sharedInstance = nil;
 {
     self = [super init];
     if (self) {
+        self.dictionaryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         [self loadData];
     }
     return self;
 }
 
-- (void) saveGroupData {
-    NSUserDefaults *usrdefaults = [NSUserDefaults standardUserDefaults];
+- (NSMutableDictionary *)loadGroupsData{
+    NSMutableDictionary *markers = nil;
+    NSString *filePath = [self.dictionaryPath stringByAppendingString:kAlarmFileName];
+    NSLog(@" file path = %@", filePath);
+    if (filePath == nil || [filePath length] == 0 ||
+        [[NSFileManager defaultManager] fileExistsAtPath:filePath] == NO) {
+        markers = [[NSMutableDictionary alloc] init];
+    } else {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:filePath];
+        NSKeyedUnarchiver *vdUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        markers = [vdUnarchiver decodeObjectForKey:@"groups"];
+        [vdUnarchiver finishDecoding];
+    }
+    return markers;
     
-    [usrdefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:_groups] forKey:@"groups"];
 }
 
-- (void) loadGroupsData {
-    NSUserDefaults *usrdefaults = [NSUserDefaults standardUserDefaults];
-    NSData *dat = [usrdefaults valueForKey:@"groups"];
-    _groups = [[NSKeyedUnarchiver unarchiveObjectWithData:dat] mutableCopy];
-    if (_groups==nil) {
-        _groups = [[NSMutableDictionary alloc] init];
-    }
+- (void)saveGroupData:(NSMutableDictionary *)markers {
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSString *filePath = [self.dictionaryPath stringByAppendingString:kAlarmFileName];
+    NSKeyedArchiver *vdArchiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [vdArchiver encodeObject:markers forKey:@"groups"];
+    [vdArchiver finishEncoding];
+    BOOL ret = [data writeToFile:filePath atomically:YES];
+    NSLog(@"write data = %@", ret?@"YES":@"NO");
 }
 
 
 - (void) saveData {
-    [self saveGroupData];
+    [self saveGroupData:self.groups];
 }
 
 - (void) loadData {
-    [self loadGroupsData];
+    self.groups = [self loadGroupsData];
 }
 
 @end

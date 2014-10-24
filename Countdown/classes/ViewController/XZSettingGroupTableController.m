@@ -10,6 +10,7 @@
 #import "XZSettingTableViewCell.h"
 #import "XZScheuleListViewController.h"
 #import "XZAddGroupViewController.h"
+#import "XZAlarmGroup.h"
 #import "DataManager.h"
 
 @interface XZSettingGroupTableController ()
@@ -33,6 +34,9 @@
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewScheuleGroup:)]];
     
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editScheuleGroup:)]];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 100;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,33 +67,37 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewCell forIndexPath:indexPath];
+    XZSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSettingTableViewCell forIndexPath:indexPath];
     
     // Configure the cell...
+    NSArray *values = [[DataManager sharedInstance] groups].allValues;
+    XZAlarmGroup *group = [values objectAtIndex:indexPath.row];
+    cell.labelTask.text = [group name];
+    
+    NSLog(@"section = %ld, group uid : %@ , name = %@", indexPath.section, group.uid, group.name);
     
     return cell;
 }
 
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the row from the data source
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }   
+//}
+
 
 /*
 // Override to support rearranging the table view.
@@ -116,7 +124,7 @@
     
     // Pass the selected object to the new view controller.
     scheuleViewController.title = @"修改事件";
-    //    scheuleViewController.parentNavigationController = self.parentNavigationController;
+    scheuleViewController.group = [[[DataManager sharedInstance] groups].allValues objectAtIndex:indexPath.row];
     
     // Push the view controller.
     [self.navigationController pushViewController:scheuleViewController animated:YES];
