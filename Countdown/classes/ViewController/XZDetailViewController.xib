@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XZDetailViewController">
@@ -14,14 +15,43 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dJd-em-HUf">
-                    <rect key="frame" x="0.0" y="313" width="320" height="162"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dJd-em-HUf">
+                    <rect key="frame" x="0.0" y="338" width="600" height="162"/>
                     <date key="date" timeIntervalSinceReferenceDate="429370387.97992802">
                         <!--2014-08-10 13:33:07 +0000-->
                     </date>
                 </datePicker>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkA-ck-93S">
+                    <rect key="frame" x="0.0" y="500" width="600" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5I-vg-AGm">
+                            <rect key="frame" x="126" y="35" width="46" height="30"/>
+                            <state key="normal" title="取消">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xa-WA-IIO">
+                            <rect key="frame" x="408" y="35" width="46" height="30"/>
+                            <state key="normal" title="Button">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="DPL-1P-TaY"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dJd-em-HUf" secondAttribute="trailing" id="8Ep-JO-7id"/>
+                <constraint firstItem="dJd-em-HUf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Md4-6A-njs"/>
+                <constraint firstAttribute="trailing" secondItem="MkA-ck-93S" secondAttribute="trailing" id="Q19-b4-Xwj"/>
+                <constraint firstAttribute="bottom" secondItem="MkA-ck-93S" secondAttribute="bottom" id="VQ5-Lx-KKi"/>
+                <constraint firstItem="MkA-ck-93S" firstAttribute="top" secondItem="dJd-em-HUf" secondAttribute="bottom" id="fwg-Vj-HsT"/>
+                <constraint firstItem="MkA-ck-93S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mq0-0l-r3C"/>
+            </constraints>
             <point key="canvasLocation" x="301" y="255"/>
         </view>
     </objects>

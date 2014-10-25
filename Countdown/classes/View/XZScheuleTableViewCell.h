@@ -12,4 +12,7 @@ extern NSString *const kScheuleTableViewCell;
 
 @interface XZScheuleTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *textEvent;
+@property (weak, nonatomic) IBOutlet UILabel *textTime;
+
 @end

@@ -9,6 +9,8 @@
 #import "XZScheuleListViewController.h"
 #import "XZDetailViewController.h"
 #import "XZScheuleTableViewCell.h"
+#import "XZAddScheuleTableViewCell.h"
+#import "XZAlarmEvent.h"
 
 @interface XZScheuleListViewController ()
 
@@ -31,6 +33,7 @@
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(addNewScheuleGroup:)]];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"XZScheuleTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kScheuleTableViewCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"XZAddScheuleTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kAddScheuleTableViewCell];
     
 }
 
@@ -46,22 +49,38 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 2;
+    if (section!=0) {
+        return 1;
+    }
+    return [self.group.alarms count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kScheuleTableViewCell forIndexPath:indexPath];
+    if(indexPath.section != 0){
+        //return [[XZAddScheuleTableViewCell alloc] init];
+        XZAddScheuleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kAddScheuleTableViewCell forIndexPath:indexPath];
+        return  cell;
+    }
+    
+    XZScheuleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kScheuleTableViewCell forIndexPath:indexPath];
     
     // Configure the cell...
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+    fmt.dateFormat = @"HH:mm";
+    
+    XZAlarmEvent *alarm = [self.group.alarms.allValues objectAtIndex:indexPath.row];
+    cell.textEvent.text = [alarm name];
+    cell.textTime.text = [fmt stringFromDate:[alarm clock]];
     
     return cell;
 }

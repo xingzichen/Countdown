@@ -12,6 +12,8 @@
 		EC28405C19F6690900003480 /* XZAlarmGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = EC28405B19F6690900003480 /* XZAlarmGroup.m */; };
 		EC5055D019F7A76000876585 /* XZAddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5055CE19F7A76000876585 /* XZAddGroupViewController.m */; };
 		EC5055D119F7A76000876585 /* XZAddGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5055CF19F7A76000876585 /* XZAddGroupViewController.xib */; };
+		EC5055D519FB68FF00876585 /* XZAddScheuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5055D319FB68FF00876585 /* XZAddScheuleTableViewCell.m */; };
+		EC5055D619FB68FF00876585 /* XZAddScheuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5055D419FB68FF00876585 /* XZAddScheuleTableViewCell.xib */; };
 		EC7FF1D41995B2F200FD4566 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D31995B2F200FD4566 /* Foundation.framework */; };
 		EC7FF1D61995B2F200FD4566 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D51995B2F200FD4566 /* CoreGraphics.framework */; };
 		EC7FF1D81995B2F200FD4566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D71995B2F200FD4566 /* UIKit.framework */; };
@@ -62,6 +64,9 @@
 		EC5055CD19F7A76000876585 /* XZAddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZAddGroupViewController.h; path = classes/ViewController/XZAddGroupViewController.h; sourceTree = "<group>"; };
 		EC5055CE19F7A76000876585 /* XZAddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZAddGroupViewController.m; path = classes/ViewController/XZAddGroupViewController.m; sourceTree = "<group>"; };
 		EC5055CF19F7A76000876585 /* XZAddGroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZAddGroupViewController.xib; path = classes/ViewController/XZAddGroupViewController.xib; sourceTree = "<group>"; };
+		EC5055D219FB68FF00876585 /* XZAddScheuleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZAddScheuleTableViewCell.h; path = classes/View/XZAddScheuleTableViewCell.h; sourceTree = "<group>"; };
+		EC5055D319FB68FF00876585 /* XZAddScheuleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZAddScheuleTableViewCell.m; path = classes/View/XZAddScheuleTableViewCell.m; sourceTree = "<group>"; };
+		EC5055D419FB68FF00876585 /* XZAddScheuleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZAddScheuleTableViewCell.xib; path = classes/View/XZAddScheuleTableViewCell.xib; sourceTree = "<group>"; };
 		EC7FF1D01995B2F200FD4566 /* Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7FF1D31995B2F200FD4566 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC7FF1D51995B2F200FD4566 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -219,6 +224,9 @@
 				ECC55D5B1997BA0D00EA8F7D /* XZScheuleTableViewCell.h */,
 				ECC55D5C1997BA0D00EA8F7D /* XZScheuleTableViewCell.m */,
 				ECC55D5D1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib */,
+				EC5055D219FB68FF00876585 /* XZAddScheuleTableViewCell.h */,
+				EC5055D319FB68FF00876585 /* XZAddScheuleTableViewCell.m */,
+				EC5055D419FB68FF00876585 /* XZAddScheuleTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -354,6 +362,7 @@
 				EC7FF1DE1995B2F200FD4566 /* InfoPlist.strings in Resources */,
 				ECC55D5F1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib in Resources */,
 				ECC55D551997ABE300EA8F7D /* XZDetailViewController.xib in Resources */,
+				EC5055D619FB68FF00876585 /* XZAddScheuleTableViewCell.xib in Resources */,
 				EC7FF1E61995B2F200FD4566 /* Images.xcassets in Resources */,
 				EC7FF21C199665C600FD4566 /* XZCountViewController.xib in Resources */,
 				ECC55D5A1997B89000EA8F7D /* XZScheuleListViewController.xib in Resources */,
@@ -378,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5055D519FB68FF00876585 /* XZAddScheuleTableViewCell.m in Sources */,
 				ECC55D591997B89000EA8F7D /* XZScheuleListViewController.m in Sources */,
 				EC7FF20E1995CAC800FD4566 /* XZSettingListTableViewController.m in Sources */,
 				EC28405919F6210E00003480 /* XZSettingGroupTableController.m in Sources */,
