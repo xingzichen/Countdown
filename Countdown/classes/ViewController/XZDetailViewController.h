@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XZAlarmEvent.h"
 
 @interface XZDetailViewController : UIViewController
+
+@property (nonatomic) NSString *mode;
+@property (nonatomic) XZAlarmEvent *alarmEvent;
 
 @end
