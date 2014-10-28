@@ -22,10 +22,10 @@
     
     XZMainViewController *mainView = [[XZMainViewController alloc] initWithNibName:@"XZMainViewController" bundle:nil];
     
-//    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:mainView];
-//    navCtrl.navigationBar.translucent = NO;
+    UINavigationController *navCtrl = [[UINavigationController alloc] initWithRootViewController:mainView];
+    navCtrl.navigationBar.translucent = NO;
     
-    self.window.rootViewController = mainView;
+    self.window.rootViewController = navCtrl;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

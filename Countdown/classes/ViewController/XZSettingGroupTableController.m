@@ -9,7 +9,6 @@
 #import "XZSettingGroupTableController.h"
 #import "XZSettingTableViewCell.h"
 #import "XZScheuleListViewController.h"
-#import "XZAddGroupViewController.h"
 #import "XZAlarmGroup.h"
 #import "DataManager.h"
 
@@ -30,10 +29,6 @@
     self.title = @"时间方案";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"XZSettingTableViewCell" bundle:nil] forCellReuseIdentifier:kSettingTableViewCell];
-    
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewScheuleGroup:)]];
-    
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editScheuleGroup:)]];
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100;
@@ -113,25 +108,7 @@
     scheuleViewController.group = [[[DataManager sharedInstance] groups].allValues objectAtIndex:indexPath.row];
     
     // Push the view controller.
-    [self.navigationController pushViewController:scheuleViewController animated:YES];
-}
-
-
-#pragma mark - Bar Button Actions
-
-- (IBAction)addNewScheuleGroup:(id)sender
-{
-    // add a new scheule group
-    NSLog(@"addNewScheuleGroup");
-    XZAddGroupViewController *addGroupController = [[XZAddGroupViewController alloc] initWithNibName:@"XZAddGroupViewController" bundle:nil];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:addGroupController];
-    [self.navigationController presentViewController:navi animated:YES completion:nil];
-}
-
-- (IBAction)editScheuleGroup:(id)sender
-{
-    // delete scheule group
-    NSLog(@"deleteScheuleGroup");
+    [self.parentNavigationController pushViewController:scheuleViewController animated:YES];
 }
 
 

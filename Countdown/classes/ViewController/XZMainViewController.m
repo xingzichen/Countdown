@@ -7,6 +7,8 @@
 //
 
 #import "XZMainViewController.h"
+#import "XZAddGroupViewController.h"
+#import "XZBaseViewController.h"
 
 @interface XZMainViewController () <UITabBarDelegate>
 
@@ -52,7 +54,10 @@
         contentClassName = @"XZCountViewController";
     }
     else if (item == self.settingItem) {
-        contentClassName = @"XZSettingListTableViewController";
+        contentClassName = @"XZSettingGroupTableController";
+        [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewScheuleGroup:)]];
+        
+        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editScheuleGroup:)]];
     }
     
     self.title = item.title;
@@ -62,7 +67,7 @@
 }
 
 - (void)addSubViewControllerByName:(NSString *)className {
-    UIViewController *vc = [viewCache objectForKey:className];
+    XZBaseViewController *vc = [viewCache objectForKey:className];
     if (!vc) {
         Class vcClass = NSClassFromString(className);
         vc = [[vcClass alloc] initWithNibName:className bundle:nil];
@@ -72,7 +77,7 @@
     }
     
     vc.view.frame = _containerView.bounds;
-    
+    vc.parentNavigationController = self.navigationController;
     [_containerView addSubview:vc.view];
 }
 
@@ -86,5 +91,22 @@
     [self loadContent:item];
 }
 
+
+#pragma mark - Bar Button Actions
+
+- (IBAction)addNewScheuleGroup:(id)sender
+{
+    // add a new scheule group
+    NSLog(@"addNewScheuleGroup");
+    XZAddGroupViewController *addGroupController = [[XZAddGroupViewController alloc] initWithNibName:@"XZAddGroupViewController" bundle:nil];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:addGroupController];
+    [self.navigationController presentViewController:navi animated:YES completion:nil];
+}
+
+- (IBAction)editScheuleGroup:(id)sender
+{
+    // delete scheule group
+    NSLog(@"deleteScheuleGroup");
+}
 
 @end
