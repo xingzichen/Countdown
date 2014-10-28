@@ -135,6 +135,12 @@
     XZDetailViewController *detailViewController = [[XZDetailViewController alloc] initWithNibName:@"XZDetailViewController" bundle:nil];
     
     // Pass the selected object to the new view controller.
+    if (indexPath.section != 0) {
+        detailViewController.title = @"添加事件";
+    }
+    else{
+        detailViewController.title = @"编辑事件";
+    }
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];

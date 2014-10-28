@@ -16,4 +16,6 @@
 @property (nonatomic) NSString *desc;
 @property (nonatomic) NSString *uuid;
 
+-(instancetype) init:(NSString *)name;
+
 @end

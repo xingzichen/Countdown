@@ -13,5 +13,8 @@
 
 @property (nonatomic) NSString *mode;
 @property (nonatomic) XZAlarmEvent *alarmEvent;
+@property (weak, nonatomic) IBOutlet UITextField *textEventName;
+@property (weak, nonatomic) IBOutlet UITextField *textEventTime;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datepicker;
 
 @end
