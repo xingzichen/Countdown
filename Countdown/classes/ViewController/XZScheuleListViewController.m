@@ -11,6 +11,7 @@
 #import "XZScheuleTableViewCell.h"
 #import "XZAddScheuleTableViewCell.h"
 #import "XZAlarmEvent.h"
+#import "DataManager.h"
 
 @interface XZScheuleListViewController ()
 
@@ -43,6 +44,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [[self tableView] reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -65,6 +72,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"section : %ld", (long)indexPath.section);
     if(indexPath.section != 0){
         //return [[XZAddScheuleTableViewCell alloc] init];
         XZAddScheuleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kAddScheuleTableViewCell forIndexPath:indexPath];
@@ -137,9 +145,12 @@
     // Pass the selected object to the new view controller.
     if (indexPath.section != 0) {
         detailViewController.title = @"添加事件";
+        detailViewController.groupKey = [self.group uid];
+        detailViewController.alarmEvent = nil;
     }
     else{
         detailViewController.title = @"编辑事件";
+        detailViewController.alarmEvent = [[self.group alarms] valueForKey:[[[self.group alarms] allKeys] objectAtIndex:indexPath.row]];
     }
     
     // Push the view controller.

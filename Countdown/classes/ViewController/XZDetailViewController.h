@@ -11,7 +11,7 @@
 
 @interface XZDetailViewController : UIViewController
 
-@property (nonatomic) NSString *mode;
+@property (nonatomic) NSString *groupKey;
 @property (nonatomic) XZAlarmEvent *alarmEvent;
 @property (weak, nonatomic) IBOutlet UITextField *textEventName;
 @property (weak, nonatomic) IBOutlet UITextField *textEventTime;

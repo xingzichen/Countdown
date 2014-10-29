@@ -7,6 +7,8 @@
 //
 
 #import "XZDetailViewController.h"
+#import "XZAlarmGroup.h"
+#import "DataManager.h"
 
 @interface XZDetailViewController ()
 
@@ -56,10 +58,18 @@
         return;
     }
     
-    if (self.alarmEvent) {
+    if (self.alarmEvent == nil) {
         self.alarmEvent = [[XZAlarmEvent alloc] init:self.textEventName.text];
         [self.alarmEvent setClock:self.datepicker.date];
+        XZAlarmGroup *group = [[[DataManager sharedInstance] groups] valueForKey:self.groupKey];
+        [group addAlarm:self.alarmEvent];
+    }else{
+        [self.alarmEvent setName:self.textEventName.text];
+        [self.alarmEvent setClock:self.datepicker.date];
+        [self.alarmEvent setEdit:[NSDate date]];
     }
+    
+    
     
     [self.navigationController popViewControllerAnimated:YES];
     

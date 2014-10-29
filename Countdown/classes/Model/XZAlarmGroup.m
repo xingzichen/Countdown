@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Xing Michael. All rights reserved.
 //
 #import "XZAlarmGroup.h"
-#import "XZAlarmEvent.h"
+
 
 NSString *const kAlarmFileName = @"XZAlarms.plist";
 

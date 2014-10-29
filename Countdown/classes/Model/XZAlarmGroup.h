@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 Xing Michael. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import "XZAlarmEvent.h"
 
 extern NSString *const kAlarmFileName;
 
@@ -18,5 +19,7 @@ extern NSString *const kAlarmFileName;
 @property (nonatomic)BOOL power;
 
 - (instancetype) init:(NSString *)name;
+- (void) addAlarm:(XZAlarmEvent *)alarm;
+- (void) removeAlarm:(XZAlarmEvent *)alarm;
 
 @end
