@@ -36,6 +36,14 @@
     // Do any additional setup after loading the view from its nib.
     NSDate *now = self.datepicker.date = [NSDate date];
     [self.textEventTime setText:[self.fmt stringFromDate:now]];
+    self.textEventName.delegate = self;
+    self.textEventTime.delegate = self;
+    
+    if (self.alarmEvent) {
+        self.datepicker.date = self.alarmEvent.clock;
+        self.textEventName.text = self.alarmEvent.name;
+        self.textEventTime.text = [self.fmt stringFromDate:self.alarmEvent.clock];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,8 +69,7 @@
     if (self.alarmEvent == nil) {
         self.alarmEvent = [[XZAlarmEvent alloc] init:self.textEventName.text];
         [self.alarmEvent setClock:self.datepicker.date];
-        XZAlarmGroup *group = [[[DataManager sharedInstance] groups] valueForKey:self.groupKey];
-        [group addAlarm:self.alarmEvent];
+        [[[[DataManager sharedInstance] groups] valueForKey:self.groupKey] addAlarm:self.alarmEvent];
     }else{
         [self.alarmEvent setName:self.textEventName.text];
         [self.alarmEvent setClock:self.datepicker.date];
@@ -79,6 +86,11 @@
 - (IBAction)cancelPressed:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return  YES;
 }
 
 @end

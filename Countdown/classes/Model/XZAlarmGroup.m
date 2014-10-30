@@ -12,7 +12,7 @@ NSString *const kAlarmFileName = @"XZAlarms.plist";
 
 @interface XZAlarmGroup()
 
-@property (nonatomic) NSString *dictionaryPath;
+//@property (nonatomic) NSString *dictionaryPath;
 
 @end
 
@@ -22,7 +22,6 @@ NSString *const kAlarmFileName = @"XZAlarms.plist";
 {
     self = [super init];
     if (self) {
-        self.dictionaryPath = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         [self setUid:[[[NSUUID alloc] init] UUIDString]];
         [self setName:name];
         [self setPower:YES];
@@ -35,8 +34,11 @@ NSString *const kAlarmFileName = @"XZAlarms.plist";
     [aCoder encodeObject:self.uid forKey:@"uid"];
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.desc forKey:@"desc"];
-    [aCoder encodeObject:self.power?@"YES":@"NO" forKey:@"power"];
+    [aCoder encodeBool:self.power forKey:@"power"];
+//    [aCoder encodeDataObject:self.alarms]
+//    [aCoder encodeObject:self.power?@"YES":@"NO" forKey:@"power"];
     [self saveAlarmsData:self.alarms];
+    NSLog(@"save alarms for group : %@ , alarms num : %lu", self.uid, (unsigned long)[self.alarms count]);
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder {
@@ -44,13 +46,9 @@ NSString *const kAlarmFileName = @"XZAlarms.plist";
         self.uid = [aDecoder decodeObjectForKey:@"uid"];
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.desc = [aDecoder decodeObjectForKey:@"desc"];
-        NSString *tmpPower = [aDecoder decodeObjectForKey:@"power"];
-        if (tmpPower!=nil && [tmpPower  isEqual: @"YES"]) {
-            self.power = YES;
-        }else{
-            self.power = NO;
-        }
+        self.power = [aDecoder decodeBoolForKey:@"power"];
         self.alarms = [self loadAlarmsData];
+        NSLog(@"load alarms");
     }
     return self;
 }
@@ -68,8 +66,8 @@ NSString *const kAlarmFileName = @"XZAlarms.plist";
 
 - (NSMutableDictionary *)loadAlarmsData{
     NSMutableDictionary *markers = nil;
-    NSString *filePath = [self.dictionaryPath stringByAppendingString:kAlarmFileName];
-    NSLog(@" file path = %@", filePath);
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingString:[self.uid stringByAppendingString:@".plist"]];
+    NSLog(@"read alarm file path = %@", filePath);
     if (filePath == nil || [filePath length] == 0 ||
         [[NSFileManager defaultManager] fileExistsAtPath:filePath] == NO) {
         markers = [[NSMutableDictionary alloc] init];
@@ -85,11 +83,12 @@ NSString *const kAlarmFileName = @"XZAlarms.plist";
 
 - (void)saveAlarmsData:(NSMutableDictionary *)markers {
     NSMutableData *data = [[NSMutableData alloc] init];
-    NSString *filePath = [self.dictionaryPath stringByAppendingString:kAlarmFileName];
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingString:[self.uid stringByAppendingString:@".plist"]];
     NSKeyedArchiver *vdArchiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
     [vdArchiver encodeObject:markers forKey:self.uid];
     [vdArchiver finishEncoding];
     BOOL ret = [data writeToFile:filePath atomically:YES];
+    NSLog(@"write alarm file path = %@ ", filePath);
     NSLog(@"write alarm data = %@", ret?@"YES":@"NO");
 }
 

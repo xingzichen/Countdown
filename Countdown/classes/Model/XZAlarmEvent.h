@@ -10,11 +10,11 @@
 
 @interface XZAlarmEvent : NSObject<NSCoding>
 
-@property (nonatomic) NSDate *edit;
-@property (nonatomic) NSDate *clock;
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *desc;
-@property (nonatomic) NSString *uuid;
+@property (nonatomic, strong) NSDate *edit;
+@property (nonatomic, strong) NSDate *clock;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *desc;
+@property (nonatomic, strong) NSString *uuid;
 
 -(instancetype) init:(NSString *)name;
 

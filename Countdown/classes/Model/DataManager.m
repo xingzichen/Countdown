@@ -43,7 +43,7 @@ static DataManager *_sharedInstance = nil;
 - (NSMutableDictionary *)loadGroupsData{
     NSMutableDictionary *markers = nil;
     NSString *filePath = [self.dictionaryPath stringByAppendingString:kAlarmFileName];
-    NSLog(@" file path = %@", filePath);
+    NSLog(@"group file path = %@", filePath);
     if (filePath == nil || [filePath length] == 0 ||
         [[NSFileManager defaultManager] fileExistsAtPath:filePath] == NO) {
         markers = [[NSMutableDictionary alloc] init];
@@ -64,7 +64,7 @@ static DataManager *_sharedInstance = nil;
     [vdArchiver encodeObject:markers forKey:@"groups"];
     [vdArchiver finishEncoding];
     BOOL ret = [data writeToFile:filePath atomically:YES];
-    NSLog(@"write data = %@", ret?@"YES":@"NO");
+    NSLog(@"write group data = %@", ret?@"YES":@"NO");
 }
 
 

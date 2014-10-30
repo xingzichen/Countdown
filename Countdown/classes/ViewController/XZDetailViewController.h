@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XZAlarmEvent.h"
 
-@interface XZDetailViewController : UIViewController
+@interface XZDetailViewController : UIViewController<UITextFieldDelegate>
 
 @property (nonatomic) NSString *groupKey;
 @property (nonatomic) XZAlarmEvent *alarmEvent;

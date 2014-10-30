@@ -12,10 +12,10 @@ extern NSString *const kAlarmFileName;
 
 @interface XZAlarmGroup : NSObject<NSCoding>
 
-@property (nonatomic)NSString *uid;
-@property (nonatomic)NSString *name;
-@property (nonatomic)NSString *desc;
-@property (nonatomic)NSMutableDictionary *alarms;
+@property (nonatomic, strong)NSString *uid;
+@property (nonatomic, strong)NSString *name;
+@property (nonatomic, strong)NSString *desc;
+@property (nonatomic, strong)NSMutableDictionary *alarms;
 @property (nonatomic)BOOL power;
 
 - (instancetype) init:(NSString *)name;
