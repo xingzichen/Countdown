@@ -52,6 +52,8 @@
     NSString *contentClassName = nil;
     if (item == self.countItem) {
         contentClassName = @"XZCountViewController";
+        [self.navigationItem setRightBarButtonItem:nil];
+        [self.navigationItem setLeftBarButtonItem:nil];
     }
     else if (item == self.settingItem) {
         contentClassName = @"XZSettingGroupTableController";
