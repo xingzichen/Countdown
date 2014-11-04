@@ -14,6 +14,7 @@
 		EC5055D119F7A76000876585 /* XZAddGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5055CF19F7A76000876585 /* XZAddGroupViewController.xib */; };
 		EC5055D519FB68FF00876585 /* XZAddScheuleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5055D319FB68FF00876585 /* XZAddScheuleTableViewCell.m */; };
 		EC5055D619FB68FF00876585 /* XZAddScheuleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5055D419FB68FF00876585 /* XZAddScheuleTableViewCell.xib */; };
+		EC714D561A092BB000F7121E /* UnidreamLED.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC714D551A092BB000F7121E /* UnidreamLED.ttf */; };
 		EC7FF1D41995B2F200FD4566 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D31995B2F200FD4566 /* Foundation.framework */; };
 		EC7FF1D61995B2F200FD4566 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D51995B2F200FD4566 /* CoreGraphics.framework */; };
 		EC7FF1D81995B2F200FD4566 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF1D71995B2F200FD4566 /* UIKit.framework */; };
@@ -66,6 +67,7 @@
 		EC5055D219FB68FF00876585 /* XZAddScheuleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XZAddScheuleTableViewCell.h; path = classes/View/XZAddScheuleTableViewCell.h; sourceTree = "<group>"; };
 		EC5055D319FB68FF00876585 /* XZAddScheuleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XZAddScheuleTableViewCell.m; path = classes/View/XZAddScheuleTableViewCell.m; sourceTree = "<group>"; };
 		EC5055D419FB68FF00876585 /* XZAddScheuleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XZAddScheuleTableViewCell.xib; path = classes/View/XZAddScheuleTableViewCell.xib; sourceTree = "<group>"; };
+		EC714D551A092BB000F7121E /* UnidreamLED.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = UnidreamLED.ttf; path = Resource/UnidreamLED.ttf; sourceTree = "<group>"; };
 		EC7FF1D01995B2F200FD4566 /* Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC7FF1D31995B2F200FD4566 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC7FF1D51995B2F200FD4566 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC714D541A092B5500F7121E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EC714D551A092BB000F7121E /* UnidreamLED.ttf */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		EC7FF1C71995B2F200FD4566 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		EC7FF1D91995B2F200FD4566 /* Countdown */ = {
 			isa = PBXGroup;
 			children = (
+				EC714D541A092B5500F7121E /* Resource */,
 				EC7FF2021995B33900FD4566 /* classes */,
 				EC7FF1E21995B2F200FD4566 /* XZAppDelegate.h */,
 				EC7FF1E31995B2F200FD4566 /* XZAppDelegate.m */,
@@ -359,6 +370,7 @@
 				ECC55D5F1997BA0D00EA8F7D /* XZScheuleTableViewCell.xib in Resources */,
 				ECC55D551997ABE300EA8F7D /* XZDetailViewController.xib in Resources */,
 				EC5055D619FB68FF00876585 /* XZAddScheuleTableViewCell.xib in Resources */,
+				EC714D561A092BB000F7121E /* UnidreamLED.ttf in Resources */,
 				EC7FF1E61995B2F200FD4566 /* Images.xcassets in Resources */,
 				EC7FF21C199665C600FD4566 /* XZCountViewController.xib in Resources */,
 				ECC55D5A1997B89000EA8F7D /* XZScheuleListViewController.xib in Resources */,

@@ -4,10 +4,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="UnidreamLED.ttf">
+            <string>UniDreamLED</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XZCountViewController">
             <connections>
-                <outlet property="labelClock" destination="TRv-cV-0FX" id="vRW-Oh-l8e"/>
+                <outlet property="labelClock" destination="fx7-eq-rnY" id="HFe-RQ-WmQ"/>
+                <outlet property="labelEventName" destination="TRv-cV-0FX" id="3WF-2D-p9d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,17 +22,25 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRv-cV-0FX">
-                    <rect key="frame" x="268" y="289" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRv-cV-0FX" userLabel="EventName">
+                    <rect key="frame" x="253.5" y="289.5" width="93.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12:59" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx7-eq-rnY" userLabel="Clock">
+                    <rect key="frame" x="222" y="351" width="156.5" height="76.5"/>
+                    <fontDescription key="fontDescription" name="UniDreamLED" family="UniDreamLED" pointSize="72"/>
+                    <color key="textColor" red="0.85490196078431369" green="0.23921568627450979" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="centerX" secondItem="fx7-eq-rnY" secondAttribute="centerX" id="Ddf-AS-yzk"/>
                 <constraint firstAttribute="centerX" secondItem="TRv-cV-0FX" secondAttribute="centerX" id="Ui9-Hw-IzR"/>
                 <constraint firstAttribute="centerY" secondItem="TRv-cV-0FX" secondAttribute="centerY" id="l4o-tS-ERp"/>
+                <constraint firstItem="fx7-eq-rnY" firstAttribute="top" secondItem="TRv-cV-0FX" secondAttribute="bottom" constant="41" id="xVp-7h-ntU"/>
             </constraints>
             <point key="canvasLocation" x="301" y="255"/>
         </view>
