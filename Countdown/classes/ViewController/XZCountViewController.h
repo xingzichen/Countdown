@@ -11,5 +11,6 @@
 @interface XZCountViewController : UIViewController
 
 @property (nonatomic) UINavigationController *parentNavigationController;
+@property (weak, nonatomic) IBOutlet UILabel *labelClock;
 
 @end
